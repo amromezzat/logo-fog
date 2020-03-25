@@ -1,12 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import ReactDOM from 'react-dom'
+import React, { Suspense, useEffect, useRef, useState } from 'react'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import './index.css'
+import LogoScene from './LogoScene.js'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
+function App() {
+  return (
+    <LogoScene />
+  )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
