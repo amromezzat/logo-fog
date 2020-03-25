@@ -26,7 +26,6 @@ export default function LogoScene() {
     if (coveringPlanesCount.current < 1) {
       isUncovered.current = true;
     }
-    console.log(coveringPlanesCount.current)
   }, []);
 
   function createPlane(xRange, yRange, key) {
@@ -42,7 +41,6 @@ export default function LogoScene() {
 
     if (coveringPlane){
       coveringPlanesCount.current++;
-      console.log(coveringPlanesCount.current)
     }
 
     return <Plane
