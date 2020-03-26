@@ -1,13 +1,16 @@
 {
-  "name": "r3f-gltf-fonts",
+  "name": "logo-fog",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "bootstrap": "^4.4.1",
     "nice-color-palettes": "3.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-three-fiber": "4.0.22",
     "three": "0.114.0"

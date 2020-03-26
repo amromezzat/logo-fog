@@ -1,6 +1,7 @@
 import React, { Suspense, Component, useMemo, useCallback, useRef, useState } from 'react';
-import * as THREE from 'three'
 import { Canvas, useFrame, useLoader } from 'react-three-fiber';
+import { useHistory } from "react-router-dom";
+import * as THREE from 'three'
 import Plane from "./Plane";
 import niceColors from 'nice-color-palettes'
 import Effects from "./Effects"
@@ -41,6 +42,7 @@ export default function LogoScene() {
 
     if (coveringPlane){
       coveringPlanesCount.current++;
+
     }
 
     return <Plane
@@ -78,10 +80,11 @@ export default function LogoScene() {
     }
     return planes;
   });
+  const history = useHistory();
 
   return (
     <Canvas onMouseMove={onMouseMove}
-      gl={{ antialias: false, alpha: false }}
+      gl={{ antialias: true, alpha: true }}
       camera={{ position: [0, 0, 15], near: 5, far: 20 }}
       onCreated={({ gl }) => {
         gl.toneMapping = THREE.Uncharted2ToneMapping
@@ -95,7 +98,7 @@ export default function LogoScene() {
       <pointLight position={[0, 0, 10]} distance={10} intensity={0.2} color="white" />
       <Suspense fallback={null}>
         {planes}
-        <Logo visible={isUncovered} />
+        <Logo visible={isUncovered} history={history} />
       </Suspense>
     </Canvas>
   );

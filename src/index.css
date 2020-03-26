@@ -20,21 +20,26 @@ body,
 }
 
 body {
+  height: 100%;
+  overflow: auto;
   position: fixed;
   overflow: hidden;
   overscroll-behavior-y: none;
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-  background: #0c0f13;
+  background: #1D2749;
+  background: -moz-linear-gradient(45deg, #1D2749 0%, #263055 100%);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #1D2749), color-stop(100%, #263055));
+  background: -webkit-linear-gradient(45deg, #1D2749 0%, #263055 100%);
+  background: -o-linear-gradient(45deg, #1D2749 0%, #263055 100%);
+  background: -ms-linear-gradient(45deg, #1D2749 0%, #263055 100%);
+  background: linear-gradient(45deg, #1D2749 0%, #263055 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradient-start', endColorstr='$gradient-end',GradientType=1 );
+  color: white; 
 }
 
 html {
   overflow: hidden;
   height: 100%;
-}
-
-body {
-  height: 100%;
-  overflow: auto;
 }
 
 canvas {
@@ -44,4 +49,17 @@ canvas {
   top: 0;
   pointer-events: none;
   overflow: hidden;
+}
+
+.clear {
+  background-color: rgba(0,0,0,0);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0), 0 3px 1px -2px rgba(0,0,0,0), 0 1px 5px 0 rgba(0,0,0,0);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0), 0 3px 1px -2px rgba(0,0,0,0), 0 1px 5px 0 rgba(0,0,0,0);
+  position: absolute;
+  z-index: 1;
+  width:300px;
+}
+
+.about-tab{
+  margin: 100px;
 }
